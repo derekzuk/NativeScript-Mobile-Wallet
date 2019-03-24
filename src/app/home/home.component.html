@@ -1,0 +1,34 @@
+<GridLayout rows="auto,*,auto" columns="*" class="background">
+
+    <GridLayout row="0" rows="auto,auto" columns="auto,*,auto" class="p-12">
+      <Label class="itemColor md f-28" col="0" row="0" text="&#xe5d5;" textWrap="true"></Label>
+      <Label class="itemColor md f-28" col="1" row="0" text="&#xe84f;" textWrap="true" horizontalAlignment="center"></Label>
+      <Label class="itemColor md f-28" col="2" row="0" text="&#xe8b8;" textWrap="true"></Label>
+      <Label class="itemColor p-t-10 f-18" col="1" row="1" text="38892.9324234" horizontalAlignment="center" textWrap="true"></Label>
+    </GridLayout>
+  
+    <RadListView row="1" [items]="dataItems" tkExampleTitle tkToggleNavButton>
+  
+      <ng-template tkListItemTemplate let-item="item">
+        <GridLayout class="list margin-top border" row="auto" columns="*,*,2*">
+          <Label col="0" text="&#xe158;" class="md text-muted f-18" horizontalAlignment="left" textWrap="true"></Label>
+          <Label col="1" text="500000" horizontalAlignment="center"></Label>
+          <Label col="2" text="TRlxvdslE3jdlSxkevjsiexl" horizontalAlignment="right"></Label>
+        </GridLayout>
+      </ng-template>
+    </RadListView>
+  
+    <GridLayout row="2" rows="auto" columns="*,*" class="paddingAlign">
+      <GridLayout (tap)="navigateTo('/receive')" col="0" class="btn">
+        <StackLayout  orientation="horizontal" horizontalAlignment="center">
+          <Label text="Receive" class="text-center" textWrap="true"></Label>
+          <Label text="&#xe3e7;" class='md m-l-5 text-center' textWrap="true"></Label>
+        </StackLayout>
+      </GridLayout>
+      <GridLayout (tap)="navigateTo('/send')" col="1" class="btn">
+        <StackLayout  orientation="horizontal" horizontalAlignment="center">
+          <Label text="&#xe163;" class='md  text-center' textWrap="true"></Label>
+          <Label text="Send" class="text-center m-l-5" textWrap="true"></Label>
+        </StackLayout>
+      </GridLayout>
+    </GridLayout>

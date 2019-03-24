@@ -1,0 +1,63 @@
+.background {
+    background-color: rgb(0, 60, 0);
+}
+
+.list {
+    background-color:white;
+}
+
+.f-18 {
+    font-size: 18dp;
+}
+
+.f-28 {
+    font-size: 28dp;
+}
+
+.itemColor{
+    color: white;
+    font-weight: 300;
+}
+
+.margin-top{
+    padding-top: 20%;
+    padding-bottom: 20%;
+    padding-right: 10%;
+    padding-left: 10%;
+    
+}
+
+.paddingAlign {
+    padding-top: 30dp;
+}
+
+.btn{
+    color: white;
+    background-color:  rgb(0, 120, 0);
+    border-radius: 5%;
+    height: 8%;
+    font-size: 20;
+    padding: 12dp 18dp 12dp 18dp;
+}
+
+.m-l-5 {
+    padding-left: 5dp;
+}
+
+
+.border{
+    border-bottom-width: 1dp;
+    border-bottom-color: gray;
+}
+
+.p-12 {
+    padding: 12%;
+}
+
+.p-t-10 {
+    padding-top: 10dp;
+}
+
+.text-muted {
+    color: #8c8c8c;
+}
