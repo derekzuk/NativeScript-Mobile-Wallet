@@ -19,7 +19,7 @@ import * as dialogs from "tns-core-modules/ui/dialogs";
 })
 export class HomeComponent implements OnInit {
 
-  dataItems = ["a", "b", "c"];
+  dataItems = ['a', "b", "c", "d"];
 
   constructor(private routerExtensions: RouterExtensions, 
     private _page: Page,
@@ -40,7 +40,7 @@ export class HomeComponent implements OnInit {
 
 
 
-  
+
   test() {
     console.log("in test()");
   }
