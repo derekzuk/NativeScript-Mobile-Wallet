@@ -1,19 +1,25 @@
 <GridLayout rows="auto,*,auto" columns="*" class="background">
   <GridLayout row="0" rows="auto,auto" columns="auto,*,auto" class="p-12">
     <Label class="itemColor md f-28" col="0" row="0" text="&#xe5d5;" textWrap="true"></Label>
-    <Image src="~/assets/img/trtl icon2 white.png" height="100px" width="100px" col="1" row="0"></Image>
+    <Image src="~/assets/img/trtl icon2 white.png" height="80px" width="80px" col="1" row="0"></Image>
     <!-- <Label class="itemColor md f-28" col="1" row="0" text="&#xe84f;" textWrap="true" horizontalAlignment="center"></Label> -->
     <Label class="itemColor md f-28" col="2" row="0" text="&#xe8b8;" textWrap="true"></Label>
     <Label class="itemColor p-t-10 f-18" col="1" style="font-weight: bold" row="1" text="38892.9324234" horizontalAlignment="center" textWrap="true"></Label>
   </GridLayout>
   
   <!-- send icon = &#xe163 -->
-  <RadListView row="1" [items]="dataItems" tkExampleTitle tkToggleNavButton>
+  <RadListView
+    row="1"
+    [items]="dataItems"
+    pullToRefresh="true"
+    (pullToRefreshInitiated)="refreshFavorites($event);"
+    tkExampleTitle
+    tkToggleNavButton>
     <ng-template tkListItemTemplate let-item="item">
       <GridLayout class="list margin-top border" row="auto" columns="*,*,2*">
-        <Label col="0" text="&#xe158;" class="md text-muted f-18" horizontalAlignment="left" textWrap="true"></Label>
-        <Label col="1" text="500000" horizontalAlignment="center"></Label>
-        <Label col="2" text={{item}} horizontalAlignment="right"></Label>
+        <Label  col="0" text="{{item.type}}" class="md text-muted f-18" horizontalAlignment="left" textWrap="true"></Label>
+        <Label col="1" text="{{item.amount}}" horizontalAlignment="center"></Label>
+        <Label col="2" text={{item.toAddress}} horizontalAlignment="right"></Label>
       </GridLayout>
     </ng-template>
   </RadListView>
