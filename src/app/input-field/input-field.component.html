@@ -15,21 +15,20 @@
         <Label row="2" text="$0.02" horizontalAlignment="center" class="text-mut"></Label>
     </GridLayout>
 
-    <WrapLayout row="3" class="b-b-10"  [margin]="digits" horizontalAlignment="center" verticalAlignment="middle" orientation="horizontal">
-        <Label
-            class="numPad"
-            verticalAlignment="top" 
-            *ngFor='let item of items; let i=index' 
-            [width]="itemWidth" 
-            (tap)="numberTap(i)" 
-            [height]="itemWidth" 
-            [text]="item.number" 
-            [ngClass]="{'numberPadding f-24' : setClass(item), ' f-23' : item.number == 'DELETE','activeNumber' : activeIndexNumber === i}"
-            horizontalAlignment="center" 
-            verticalAlignment="middle" 
-            textWrap="true">
-        </Label>
-    </WrapLayout>
+    <GridLayout rows="*,*,*,*" columns="*,*,*" row="3" class="b-b-10" [margin]="digits" horizontalAlignment="center" verticalAlignment="middle" orientation="horizontal">
+        <Button style="color: white;" row="0" col="0" [width]="itemWidth" [height]="itemWidth" text="1"></Button>
+        <Button style="color: white;" row="0" col="1" [width]="itemWidth" [height]="itemWidth" text="2"></Button>
+        <Button style="color: white;" row="0" col="2" [width]="itemWidth" [height]="itemWidth" text="3"></Button>
+        <Button style="color: white;" row="1" col="0" [width]="itemWidth" [height]="itemWidth" text="4"></Button>
+        <Button style="color: white;" row="1" col="1" [width]="itemWidth" [height]="itemWidth" text="5"></Button>
+        <Button style="color: white;" row="1" col="2" [width]="itemWidth" [height]="itemWidth" text="6"></Button>
+        <Button style="color: white;" row="2" col="0" [width]="itemWidth" [height]="itemWidth" text="7"></Button>
+        <Button style="color: white;" row="2" col="1" [width]="itemWidth" [height]="itemWidth" text="8"></Button>
+        <Button style="color: white;" row="2" col="2" [width]="itemWidth" [height]="itemWidth" text="9"></Button>
+        <Button style="color: white;" row="3" col="0" [width]="itemWidth" [height]="itemWidth" text="."></Button>
+        <Button style="color: white;" row="3" col="1" [width]="itemWidth" [height]="itemWidth" text="0"></Button>
+        <Button style="color: white;" row="3" col="2" [width]="itemWidth" [height]="itemWidth" text="del"></Button>
+    </GridLayout>
 
     <Button row="4" class="btn" text="Send"></Button>
 

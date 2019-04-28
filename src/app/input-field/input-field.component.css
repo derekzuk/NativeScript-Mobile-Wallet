@@ -26,6 +26,7 @@
 
 .b-b-10 {
     border-bottom: 10dp;
+    width: 87%;
 }
 
 .numberPadding {
@@ -106,4 +107,5 @@
     text-align: center;
     margin-top: -5%;
     color: white;
+    width: 100%;
 }
