@@ -1,8 +1,8 @@
 <GridLayout rows="auto,auto,auto,*,auto" class="background ">
     <GridLayout row="0" rows="auto" columns="*,auto,*" class="p-12">
         <Label col="0" class="white f-28 md" (tap)="back()" text="&#xe317;"></Label>
-        <Label col="1" class="actionbar" text="Send"></Label>
-        <Label col="2" class="white f-28 md" text="&#xe255;" horizontalAlignment="right"></Label>
+        <Label style="color: white; font-weight: bold" col="1" class="actionbar" text="Send"></Label>
+        <Label col="2" class="white f-28 md" text="camera_alt" horizontalAlignment="right"></Label>
     </GridLayout>
 
     <textfield hint="Enter a Trtl Address" class="input-f" row="1"></textfield>
@@ -10,14 +10,25 @@
     <GridLayout rows="*,*,*" columns="*" row="2" class="height">
         <Label text="Max" horizontalAlignment="left" verticalAlignment="middle" class="max"></Label>
         <Label row="0" text="400trtl" horizontalAlignment="center" class="text-pri"></Label>
-        <Label row="1" text="&#xe0c3;" class="md f-26 white" verticalAlignment="middle" horizontalAlignment="center"></Label>
+        <Label row="1" text="import_export" class="md f-26 white" verticalAlignment="middle" horizontalAlignment="center"></Label>
         <GridLayout rows="" columns="" row="1" class="line" verticalAlignment="middle"> </GridLayout>
         <Label row="2" text="$0.02" horizontalAlignment="center" class="text-mut"></Label>
     </GridLayout>
 
     <WrapLayout row="3" class="b-b-10"  [margin]="digits" horizontalAlignment="center" verticalAlignment="middle" orientation="horizontal">
-            <Label   verticalAlignment="top" *ngFor='let item of items; let i=index' [width]="itemWidth" (tap)="numberTap(i)" [height]="itemWidth" [text]="item.number" [ngClass]="{'numberPadding f-24' : setClass(item), ' f-23' : item.number == 'DELETE','activeNumber' : activeIndexNumber === i}"
-                class="text-center" horizontalAlignment="center" verticalAlignment="middle" textWrap="true"></Label>
+        <Label
+            class="numPad"
+            verticalAlignment="top" 
+            *ngFor='let item of items; let i=index' 
+            [width]="itemWidth" 
+            (tap)="numberTap(i)" 
+            [height]="itemWidth" 
+            [text]="item.number" 
+            [ngClass]="{'numberPadding f-24' : setClass(item), ' f-23' : item.number == 'DELETE','activeNumber' : activeIndexNumber === i}"
+            horizontalAlignment="center" 
+            verticalAlignment="middle" 
+            textWrap="true">
+        </Label>
     </WrapLayout>
 
     <Button row="4" class="btn" text="Send"></Button>

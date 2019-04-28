@@ -43,13 +43,13 @@ export class InputFieldComponent implements OnInit {
     { number: '7' },
     { number: '8' },
     { number: '9' },
-    { number: 'DELETE' },
+    { number: '.' },
     { number: '0' },
-    { number: '.' }
+    { number: 'del' }
   ]
   
   setClass(item) {
-    if(item.number == 'DELETE' || item.number == '.') {
+    if(item.number == 'del' || item.number == '.') {
       return false;
     } else {
       return true;
