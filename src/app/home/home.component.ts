@@ -12,6 +12,7 @@ import { Transaction } from '../domain/transaction';
 import { TrtlService } from '../service/trtl/trtl.service'
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { ListViewEventData } from 'nativescript-ui-listview';
+import { Vibrate } from 'nativescript-vibrate';
 
 @Component({
   selector: 'ns-home',
@@ -22,6 +23,7 @@ import { ListViewEventData } from 'nativescript-ui-listview';
 export class HomeComponent implements OnInit {
 
   dataItems = [];
+  vibrator = new Vibrate();
 
   constructor(private routerExtensions: RouterExtensions, 
     private _page: Page,
@@ -60,13 +62,18 @@ export class HomeComponent implements OnInit {
     this.dataItems.push(new Transaction(data2));
   }
 
-public refreshFavorites(args: ListViewEventData) {
-    console.log("refreshFavorites");
+public refreshTransactions(event: ListViewEventData) {
+    console.log("refreshTransactions");
+    this.vibrator.vibrate(2000);
     const that = new WeakRef(this);
     setTimeout(function () {
-        const listView = args.object;
+        const listView = event.object;
         listView.notifyPullToRefreshFinished();
     }, 1000);
+}
+
+public onTap(event: ListViewEventData) {
+  console.log("onTap() index: " + event.index);
 }
 
   // public onItemTap() {

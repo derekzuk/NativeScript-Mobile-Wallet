@@ -2,8 +2,7 @@
 
 tns prepare ios <br>
 tns build ios <br>
-tns deploy ios <br>
-tns preview
+tns preview --bundle
 
 # To update tns cli:
 npm cache clean --force <br>

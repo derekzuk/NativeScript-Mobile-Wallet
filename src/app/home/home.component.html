@@ -12,7 +12,9 @@
     row="1"
     [items]="dataItems"
     pullToRefresh="true"
-    (pullToRefreshInitiated)="refreshFavorites($event);"
+    (pullToRefreshInitiated)="refreshTransactions($event);"
+    tap="onTap"
+    (itemTap)="onTap($event);"
     tkExampleTitle
     tkToggleNavButton>
     <ng-template tkListItemTemplate let-item="item">
