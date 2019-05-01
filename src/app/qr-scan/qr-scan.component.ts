@@ -5,9 +5,11 @@ import { BarcodeScanner } from "nativescript-barcodescanner";
 
 // https://github.com/EddyVerbruggen/nativescript-barcodescanner
 @Component({
-    selector: "qr-scan",
-    templateUrl: "qr-scan.component.html",
-})
+    selector: 'qr-scan',
+    templateUrl: './qr-scan.component.html',
+    styleUrls: ['./qr-scan.component.css'],
+    moduleId: module.id
+  })
 export class QrScanComponent {
     barcodeScanner = new BarcodeScanner();
 

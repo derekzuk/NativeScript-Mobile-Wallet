@@ -37,8 +37,8 @@ export class HomeComponent implements OnInit {
   navigateTo(url) {
     this.routerExtensions.navigate([url], {
         transition: {
-        name: 'fade',
-        curve: 'linear'
+        name: 'slideTop',
+        curve: 'Ease-in-out'
         }
     });
   }

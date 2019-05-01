@@ -77,8 +77,8 @@ export class InputFieldComponent implements OnInit {
   navigateTo(url) {
     this.routerExtensions.navigate([url], {
         transition: {
-        name: 'fade',
-        curve: 'linear'
+        name: 'slideRight',
+        curve: 'Ease-in-out'
         }
     });
   }
