@@ -73,13 +73,4 @@ export class InputFieldComponent implements OnInit {
   back() {
     this.routerExtensions.back();
   }
-
-  navigateTo(url) {
-    this.routerExtensions.navigate([url], {
-        transition: {
-        name: 'fade',
-        curve: 'linear'
-        }
-    });
-  }
 }

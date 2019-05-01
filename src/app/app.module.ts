@@ -4,10 +4,10 @@ import { AppRoutingModule } from "./app.routing";
 import { AppComponent } from "./app.component";
 import { QrPageComponent } from "./qr-page/qr-page.component";
 import { InputFieldComponent } from "./input-field/input-field.component";
+import { QrScanComponent } from "./qr-scan/qr-scan.component";
 import { CommonModule } from "@angular/common";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
-
-
+import { BarcodeScanner } from 'nativescript-barcodescanner';
 
 // Uncomment and add to NgModule imports if you need to use two-way binding
 // import { NativeScriptFormsModule } from "nativescript-angular/forms";
@@ -31,8 +31,11 @@ import { HomeComponent } from './home/home.component';
       QrPageComponent,
       InputFieldComponent,
       HomeComponent,
+      QrScanComponent
    ],
-   providers: [],
+   providers: [
+      BarcodeScanner
+   ],
    schemas: [
       NO_ERRORS_SCHEMA
    ]

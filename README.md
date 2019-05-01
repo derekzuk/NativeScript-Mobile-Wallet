@@ -1,7 +1,7 @@
 # To run with NativeScript Playground iPhone app:
 
-tns prepare ios <br>
-tns build ios <br>
+tns prepare ios<br>
+tns build ios<br>
 tns preview --bundle
 
 # To update tns cli:
