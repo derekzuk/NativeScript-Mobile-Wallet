@@ -5,6 +5,7 @@ import { AppComponent } from "./app.component";
 import { QrPageComponent } from "./qr-page/qr-page.component";
 import { InputFieldComponent } from "./input-field/input-field.component";
 import { QrScanComponent } from "./qr-scan/qr-scan.component";
+import { SettingsComponent } from "./settings/settings.component";
 import { CommonModule } from "@angular/common";
 import { NativeScriptUIListViewModule } from "nativescript-ui-listview/angular";
 import { BarcodeScanner } from 'nativescript-barcodescanner';
@@ -31,7 +32,8 @@ import { HomeComponent } from './home/home.component';
       QrPageComponent,
       InputFieldComponent,
       HomeComponent,
-      QrScanComponent
+      QrScanComponent,
+      SettingsComponent
    ],
    providers: [
       BarcodeScanner
