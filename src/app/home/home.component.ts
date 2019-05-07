@@ -13,6 +13,7 @@ import { TrtlService } from '../service/trtl/trtl.service'
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { Vibrate } from 'nativescript-vibrate';
+import { WalletBackend, ConventionalDaemon, BlockchainCacheApi } from 'turtlecoin-wallet-backend';
 
 @Component({
   selector: 'ns-home',
@@ -76,61 +77,29 @@ public onTap(event: ListViewEventData) {
   console.log("onTap() index: " + event.index);
 }
 
-  // public onItemTap() {
-  //   console.log("tapped item. Not sure which.");
-  // }
+public walletTest() { 
+  (async () => {
+    const daemon: ConventionalDaemon = new ConventionalDaemon('127.0.0.1', 11898);
 
+    /* OR
+    const daemon: BlockchainCacheApi = new BlockchainCacheApi('blockapi.turtlepay.io', true);
+    */
+    
+    const wallet: WalletBackend = WalletBackend.createWallet(daemon);
 
+    console.log('Created wallet');
 
-  test() {
-    console.log("in test()");
-  }
+    await wallet.start();
 
-  testItem() {
-    console.log("in testItem()");
-  }
+    console.log('Started wallet');
 
-  presentTransactionOptions() {
-    dialogs.alert("Your message").then(()=> {
-      console.log("Dialog closed!");
+    wallet.saveWalletToFile('mywallet.wallet', 'hunter2');
+
+    /* Make sure to call stop to let the node process exit */
+    wallet.stop();
+  })().catch(err => {
+      console.log('Caught promise rejection: ' + err);
   });
-
-    // let alert = this.alertCtrl.create({
-    //   title: 'TRTL Transaction',
-    //   message: 'What action would you like to take related to this TRTL Transaction?',
-    //   buttons: [
-    //     {
-    //       text: 'Send TRTL to Address',
-    //       role: 'sendTrtlToAddress',
-    //       handler: () => {
-    //         console.log('sendTrtlToAddress clicked');
-    //       }
-    //     },
-    //     {
-    //       text: 'View Transaction on Explorer',
-    //       handler: () => {
-    //         console.log('viewTransactionOnExplorer clicked');
-    //       }
-    //     },
-    //     {
-    //       text: 'Copy Address',
-    //       role: 'copyAddress',
-    //       handler: () => {
-    //         console.log('copyAddress clicked');
-    //       }
-    //     },
-    //     {
-    //       text: 'Cancel',
-    //       role: 'cancel',
-    //       handler: () => {
-    //         console.log('cancel clicked');
-    //       }
-    //     }
-    //   ]
-    // });
-    // alert.present();
-
-
-  }
+}
 
 }
