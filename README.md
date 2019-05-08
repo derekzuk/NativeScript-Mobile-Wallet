@@ -1,11 +1,11 @@
 # To run with NativeScript Playground iPhone app:
 
 tns prepare ios<br>
-tns build ios --log trace --bundle > out.txt<br>
+tns build ios --for-device --log trace --bundle > out.txt<br>
 <!-- try "tns build ios --for-device" and also with --release -->
 <!-- tns build ios --for-device --release --bundle webpack --env.uglify -->
 <!-- tns preview --bundle -->
-run in xcode, preferably on real phone?
+run in xcode, using real phone
 
 # tns preview doesn't work anymore:
 We have to build the application in xcode: <br>
