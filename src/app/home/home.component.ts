@@ -13,7 +13,7 @@ import { TrtlService } from '../service/trtl/trtl.service'
 import * as dialogs from "tns-core-modules/ui/dialogs";
 import { ListViewEventData } from 'nativescript-ui-listview';
 import { Vibrate } from 'nativescript-vibrate';
-import { WalletBackend, ConventionalDaemon, BlockchainCacheApi } from 'turtlecoin-wallet-backend';
+// import { WalletBackend, ConventionalDaemon, BlockchainCacheApi } from 'turtlecoin-wallet-backend';
 
 @Component({
   selector: 'ns-home',
@@ -77,29 +77,25 @@ public onTap(event: ListViewEventData) {
   console.log("onTap() index: " + event.index);
 }
 
-public walletTest() { 
-  (async () => {
-    const daemon: ConventionalDaemon = new ConventionalDaemon('127.0.0.1', 11898);
-
-    /* OR
-    const daemon: BlockchainCacheApi = new BlockchainCacheApi('blockapi.turtlepay.io', true);
-    */
+// public walletTest() { 
+//   (async () => {
+//     const daemon: BlockchainCacheApi = new BlockchainCacheApi('blockapi.turtlepay.io', true);
     
-    const wallet: WalletBackend = WalletBackend.createWallet(daemon);
+//     const wallet: WalletBackend = WalletBackend.createWallet(daemon);
 
-    console.log('Created wallet');
+//     console.log('Created wallet');
 
-    await wallet.start();
+//     await wallet.start();
 
-    console.log('Started wallet');
+//     console.log('Started wallet');
 
-    wallet.saveWalletToFile('mywallet.wallet', 'hunter2');
+//     wallet.saveWalletToFile('mywallet.wallet', 'hunter2');
 
-    /* Make sure to call stop to let the node process exit */
-    wallet.stop();
-  })().catch(err => {
-      console.log('Caught promise rejection: ' + err);
-  });
-}
+//     /* Make sure to call stop to let the node process exit */
+//     wallet.stop();
+//   })().catch(err => {
+//       console.log('Caught promise rejection: ' + err);
+//   });
+// }
 
 }
